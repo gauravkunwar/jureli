@@ -1,0 +1,9 @@
+services:
+  jureli:
+    build: . # Build the image from the Dockerfile in the current directory
+    container_name: jureli
+    env_file:
+      - .env # Load environment variables from the .env file
+    ports:
+      - "6001:5000" # Map host port 6001 to container port 5000 (where Flask runs)
+    restart: unless-stopped
