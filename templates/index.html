@@ -4,21 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jureli - SMTP Tester</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐦</text></svg>">
     <style>
         :root {
-            --primary-color: #2c6e49;
-            --primary-hover: #235c3b;
-            --secondary-color: #4a4e69;
-            --text-color: #333;
-            --border-color: #d8e2dc;
-            --fieldset-border: #cdd8d3; /* Slightly different for fieldset */
+            /* Core Palette */
+            --primary-color: #dc3545; /* Bright Red (Vent) - Main Action Color */
+            --primary-hover: #c82333; /* Darker Red */
+            --secondary-color: #343a40; /* Dark Charcoal (Body/Head) - Headings */
+            --text-color: #212529;    /* Very Dark Grey/Black - Body Text */
+            --body-bg: #f8f9fa;       /* Very Light Grey - Page Background */
+            --container-bg: #ffffff; /* White - Main Container BG */
+            --input-bg: #ffffff;      /* White - Input Background */
+
+            /* Borders & Accents */
+            --border-color: #dee2e6;    /* Light Grey - Standard Borders */
+            --fieldset-border: #ced4da; /* Medium Grey - Fieldset Borders */
+
+            /* Standard Status Colors (Can be customized further if desired) */
             --success-bg: #d1e7dd;
             --success-text: #0f5132;
             --error-bg: #f8d7da;
-            --error-text: #842029;
+            --error-text: #842029;     /* Using standard error red */
+
+            /* Other */
             --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-            --input-bg: #fff;
-        }
+}
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

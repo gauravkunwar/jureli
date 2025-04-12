@@ -1,4 +1,4 @@
-# Jureli SMTP Testing Tool 🐦
+# Jureli - SMTP Testing Tool 🐦
 
 <p align="center">
   <i>(Jureli is a common bird found in Nepal🇳🇵)</i>
