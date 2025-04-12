@@ -13,39 +13,31 @@
             --secondary-color: #343a40; /* Dark Charcoal (Body/Head) - Headings */
             --text-color: #212529;    /* Very Dark Grey/Black - Body Text */
             --body-bg: #f8f9fa;       /* Very Light Grey - Page Background */
-            --container-bg: #ffffff; /* White - Main Container BG */
             --input-bg: #ffffff;      /* White - Input Background */
 
             /* Borders & Accents */
             --border-color: #dee2e6;    /* Light Grey - Standard Borders */
-            --fieldset-border: #ced4da; /* Medium Grey - Fieldset Borders */
+            --section-border: #ced4da; /* Medium Grey - Section Borders */
 
-            /* Standard Status Colors (Can be customized further if desired) */
+            /* Standard Status Colors */
             --success-bg: #d1e7dd;
             --success-text: #0f5132;
             --error-bg: #f8d7da;
             --error-text: #842029;     /* Using standard error red */
-
-            /* Other */
-            --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-}
+        }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text-color);
-            background-color: #f8f9fa;
+            background-color: #ffffff; /* Changed back to white for consistency */
             margin: 0;
-            padding: 1rem; /* Reduce padding slightly for smaller screens */
+            padding: 1rem;
         }
 
-        .container {
-            max-width: 960px; /* Allow wider container */
-            margin: 1rem auto; /* Adjust margin */
-            background-color: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: var(--box-shadow);
+        .page-header {
+            text-align: center;
+            margin-bottom: 2rem;
         }
 
         h1 {
@@ -53,40 +45,50 @@
             margin-top: 0;
             margin-bottom: 0.5rem;
             font-weight: 600;
-            text-align: center;
         }
 
         .tagline {
             color: #666;
             font-size: 0.9rem;
-            margin-bottom: 2rem;
             display: block;
-            text-align: center;
         }
 
-        /* Fieldset for visual separation */
-        fieldset {
-            border: 1px solid var(--fieldset-border);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            background-color: #fdfdfd; /* Slight background tint */
+        /* Section styling */
+        .form-section {
+            margin-bottom: 2rem; /* Adjust if more space is needed */
+            /* border-bottom: 1px solid var(--border-color); */ /* Removed */
         }
 
-        legend {
+        /* .form-section:last-of-type { REMOVED
+            border-bottom: none;
+        } */
+
+        .section-heading {
             font-size: 1.2rem;
             font-weight: 600;
             color: var(--secondary-color);
-            padding: 0 0.75rem;
-            margin-left: 0.5rem; /* Align legend nicely */
+            padding: 0;
+            margin-bottom: 1.5rem;
+            position: relative;
+            text-align: left;
+            display: inline-block;
+        }
+
+        .section-heading:after {
+            content: '';
+            display: block;
+            width: 100%; /* Full width of the text */
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 8px 0 0 0;
         }
 
         label {
             display: block;
-            margin-bottom: 0.3rem; /* Reduce space below label */
+            margin-bottom: 0.3rem;
             font-weight: 500;
             color: #444;
-            font-size: 0.9rem; /* Slightly smaller label */
+            font-size: 0.9rem;
         }
 
         input[type="email"],
@@ -96,14 +98,13 @@
         textarea,
         select {
             width: 100%;
-            padding: 0.6rem 0.75rem; /* Slightly reduce padding */
+            padding: 0.6rem 0.75rem;
             border: 1px solid var(--border-color);
             border-radius: 6px;
-            font-size: 0.95rem; /* Slightly smaller font in input */
+            font-size: 0.95rem;
             transition: border 0.2s, box-shadow 0.2s;
             box-sizing: border-box;
             background-color: var(--input-bg);
-            /* Remove default margin-bottom, handle spacing via form-group/form-row */
             margin-bottom: 0;
         }
 
@@ -118,11 +119,11 @@
         select:focus {
             outline: none;
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(44, 110, 73, 0.15);
+            box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.15);
         }
 
         textarea {
-            height: 120px; /* Shorter textarea */
+            height: 120px;
             resize: vertical;
         }
 
@@ -130,18 +131,18 @@
             color: #777;
             font-size: 0.75rem;
             display: block;
-            margin-top: 0.25rem; /* Space above helper */
+            margin-top: 0.25rem;
             font-style: italic;
         }
 
         button {
-            display: block; /* Make button block to center */
-            margin: 1.5rem auto 0 auto; /* Center button */
+            display: block;
+            margin: 1.5rem auto 0 auto;
             background-color: var(--primary-color);
             color: white;
             border: none;
             border-radius: 6px;
-            padding: 0.8rem 2rem; /* Wider padding */
+            padding: 0.8rem 2rem;
             font-size: 1rem;
             font-weight: 500;
             cursor: pointer;
@@ -157,7 +158,7 @@
         }
 
         .form-group {
-            margin-bottom: 1rem; /* Default spacing below each group */
+            margin-bottom: 1rem;
         }
 
         .radio-group label {
@@ -167,6 +168,7 @@
             font-size: 0.9rem;
             cursor: pointer;
         }
+
         .radio-group input[type="radio"] {
             margin-right: 0.3rem;
             width: auto;
@@ -175,8 +177,8 @@
 
         .flash {
             padding: 1rem;
-            margin: 0 auto 1.5rem auto; /* Center flash messages */
-            max-width: 960px; /* Match container max-width */
+            margin: 0 auto 1.5rem auto;
+            max-width: 960px;
             border-radius: 6px;
             font-weight: 500;
         }
@@ -197,29 +199,36 @@
         @media (min-width: 768px) {
             .form-row {
                 display: flex;
-                gap: 1.5rem; /* Space between columns */
-                margin-bottom: 1rem; /* Space below the row */
-                align-items: flex-start; /* Align items to the top */
+                gap: 1.5rem;
+                margin-bottom: 1rem;
+                align-items: flex-start;
             }
 
             .form-row .form-group {
-                flex: 1; /* Make groups share space equally */
-                margin-bottom: 0; /* Remove bottom margin, row handles spacing */
+                flex: 1;
+                margin-bottom: 0;
             }
 
-             /* Specific width adjustments if needed */
-             .form-group.port-field { /* Example: make port field smaller */
-                 flex: 0 0 120px; /* Don't grow, don't shrink, base width 120px */
-             }
-        }
-         @media (min-width: 992px) {
-             /* Further adjustments for even wider screens if needed */
-         }
+            .form-group.port-field {
+                flex: 0 0 120px;
+            }
 
+            form {
+                max-width: 960px;
+                margin: 0 auto;
+            }
+
+            /* Apply max-width to header on wider screens to align with form */
+            .page-header {
+                 max-width: 960px;
+                 margin-left: auto;
+                 margin-right: auto;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Flash messages outside the main container for better visibility -->
+    <!-- Flash messages visible at the top -->
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
             {% for category, message in messages %}
@@ -228,89 +237,88 @@
         {% endif %}
     {% endwith %}
 
-    <div class="container">
+    <div class="page-header">
         <h1>Jureli SMTP Tester</h1>
         <span class="tagline">Test SMTP server configurations and send emails</span>
-
-        <form action="/send" method="post" enctype="multipart/form-data">
-
-            <fieldset>
-                <legend>SMTP Configuration</legend>
-
-                <div class="form-row">
-                    <div class="form-group" style="flex: 2;"> <!-- Server takes more space -->
-                        <label for="smtp_server">SMTP Server:</label>
-                        <input type="text" id="smtp_server" name="smtp_server" required placeholder="e.g., smtp.gmail.com">
-                    </div>
-                    <div class="form-group port-field"> <!-- Port takes less space -->
-                        <label for="smtp_port">Port:</label>
-                        <input type="number" id="smtp_port" name="smtp_port" required placeholder="e.g., 587">
-                    </div>
-                </div>
-
-                 <div class="form-group"> <!-- Keep security selection full width for clarity -->
-                    <label>Connection Security:</label>
-                    <div class="radio-group">
-                        <label><input type="radio" name="connection_security" value="tls" checked> Use STARTTLS</label>
-                        <label><input type="radio" name="connection_security" value="ssl"> Use SSL</label>
-                        <label><input type="radio" name="connection_security" value="none"> None</label>
-                    </div>
-                    <span class="helper-text">Choose based on server/port. Common: 587/TLS, 465/SSL.</span>
-                </div>
-
-                <div class="form-row">
-                     <div class="form-group">
-                        <label for="smtp_username">SMTP Username:</label>
-                        <input type="text" id="smtp_username" name="smtp_username" required placeholder="e.g., your_email@example.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="smtp_password">SMTP Password:</label>
-                        <input type="password" id="smtp_password" name="smtp_password" required placeholder="Use App Password if needed">
-                    </div>
-                </div>
-            </fieldset>
-
-            <fieldset>
-                <legend>Email Details</legend>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="display_name">Sender Display Name (Optional):</label>
-                        <input type="text" id="display_name" name="display_name" placeholder="e.g., Your Name">
-                    </div>
-                     <div class="form-group">
-                        <label for="from_email">Sender Email Address:</label>
-                        <input type="email" id="from_email" name="from_email" required placeholder="e.g., sender@example.com">
-                        <span class="helper-text">Must be allowed by the SMTP server/credentials.</span>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="to_email">To Recipient(s):</label>
-                        <input type="email" id="to_email" name="to_email" required multiple placeholder="recipient1@example.com, recipient2@example.com">
-                    </div>
-                    <div class="form-group">
-                         <label for="subject">Subject:</label>
-                        <input type="text" id="subject" name="subject" required>
-                    </div>
-                </div>
-
-                <div class="form-group"> <!-- Body is always full width -->
-                    <label for="body">Body:</label>
-                    <textarea id="body" name="body" required></textarea>
-                </div>
-
-                <div class="form-group"> <!-- Attachments always full width -->
-                    <label for="attachments">Attachments:</label>
-                    <input type="file" id="attachments" name="attachments" multiple>
-                </div>
-            </fieldset>
-
-            <div>
-                <button type="submit">Send Test Email</button>
-            </div>
-        </form>
     </div>
+
+    <form action="/send" method="post" enctype="multipart/form-data">
+        <div class="form-section">
+            <h2 class="section-heading">SMTP Configuration</h2>
+
+            <div class="form-row">
+                <div class="form-group" style="flex: 2;">
+                    <label for="smtp_server">SMTP Server:</label>
+                    <input type="text" id="smtp_server" name="smtp_server" required placeholder="e.g., smtp.gmail.com">
+                </div>
+                <div class="form-group port-field">
+                    <label for="smtp_port">Port:</label>
+                    <input type="number" id="smtp_port" name="smtp_port" required placeholder="e.g., 587">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Connection Security:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="connection_security" value="tls" checked> Use STARTTLS</label>
+                    <label><input type="radio" name="connection_security" value="ssl"> Use SSL</label>
+                    <label><input type="radio" name="connection_security" value="none"> None</label>
+                </div>
+                <span class="helper-text">Choose based on server/port. Common: 587/TLS, 465/SSL.</span>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="smtp_username">SMTP Username:</label>
+                    <input type="text" id="smtp_username" name="smtp_username" required placeholder="e.g., your_email@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="smtp_password">SMTP Password:</label>
+                    <input type="password" id="smtp_password" name="smtp_password" required placeholder="Use App Password if needed">
+                </div>
+            </div>
+        </div> <!-- End SMTP Config Section -->
+
+        <div class="form-section">
+            <h2 class="section-heading">Email Details</h2>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="display_name">Sender Display Name (Optional):</label>
+                    <input type="text" id="display_name" name="display_name" placeholder="e.g., Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="from_email">Sender Email Address:</label>
+                    <input type="email" id="from_email" name="from_email" required placeholder="e.g., sender@example.com">
+                    <span class="helper-text">Must be allowed by the SMTP server/credentials.</span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="to_email">To Recipient(s):</label>
+                    <input type="email" id="to_email" name="to_email" required multiple placeholder="recipient1@example.com, recipient2@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="body">Body:</label>
+                <textarea id="body" name="body" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="attachments">Attachments:</label>
+                <input type="file" id="attachments" name="attachments" multiple>
+            </div>
+        </div> <!-- End Email Details Section -->
+
+        <div>
+            <button type="submit">Send Test Email</button>
+        </div>
+    </form>
 </body>
 </html>
